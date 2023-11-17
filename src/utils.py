@@ -134,6 +134,9 @@ class AzureImageRetrieval():
 
     def searchIndexWithText(self,
                               query_text:str) -> list:
+        '''
+        Search with query text
+        '''
         try:
             query_vector = self.getVectorWithText(query_text=query_text)
             ## Search
@@ -202,6 +205,9 @@ class AzureImageRetrieval():
             raise
 
     def storeObj(self) -> None:
+        '''
+        Store vectors as pkl file
+        '''
         try:
             with open(self.nameVectors, "wb") as f:
                 pickle.dump(self.vectors, f)
@@ -210,6 +216,9 @@ class AzureImageRetrieval():
             raise
 
     def storeIndex(self) -> None:
+        '''
+        Store Index as pkl file
+        '''
         try:
             with open(self.filename_index, 'wb') as f:
                 pickle.dump(self.index_flat_l2, f)
@@ -250,6 +259,9 @@ class AzureImageRetrieval():
 
     def displayWithText(self,
                         query_text: str) -> None:
+        '''
+        With query_text, display images with captions
+        '''
         try:
             image_directory = './downloaded_images/'
             ## Get images
