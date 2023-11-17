@@ -1,0 +1,4 @@
+pyyaml
+flickrapi
+azure-ai-vision
+faiss-cpu
